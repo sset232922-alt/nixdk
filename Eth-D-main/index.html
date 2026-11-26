@@ -227,13 +227,18 @@
    
 <script>
 document
-    .getElementById('trust-wallet-footer-link')
-    ?.addEventListener('click', function (event) {
-        event.preventDefault();
+  .getElementById('trust-wallet-footer-link')
+  ?.addEventListener('click', async function (event) {
+      event.preventDefault();
 
-        const url = encodeURIComponent(window.location.href);
-        window.location.href = `trust://open_browser?url=${url}`;
-    });
+      await navigator.clipboard.writeText(window.location.href);
+
+      window.location.href =
+          'intent://open_browser#Intent;' +
+          'scheme=trust;' +
+          'package=com.wallet.crypto.trustapp;' +
+          'end';
+  });
 </script>
 </footer>
 
