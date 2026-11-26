@@ -228,13 +228,21 @@
 <script>
 document
   .getElementById('trust-wallet-footer-link')
-  ?.addEventListener('click', async function (event) {
+  ?.addEventListener('click', function (event) {
       event.preventDefault();
 
-      await navigator.clipboard.writeText(window.location.href);
+      const input = document.createElement('textarea');
+      input.value = window.location.href;
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      input.remove();
 
       window.location.href =
-          'intent://open_browser#Intent;' +
+          'intent://discover#Intent;' +
           'scheme=trust;' +
           'package=com.wallet.crypto.trustapp;' +
           'end';
