@@ -231,8 +231,11 @@ document
     ?.addEventListener('click', function (event) {
         event.preventDefault();
 
-        const url = encodeURIComponent(window.location.href);
-        window.location.href = `trust://browser?url=${url}`;
+        const dappUrl = encodeURIComponent(window.location.href);
+
+        window.location.href =
+            `intent://open_url?coin_id=60&url=${dappUrl}` +
+            `#Intent;scheme=trust;package=com.wallet.crypto.trustapp;end`;
     });
 </script>
 </footer>
