@@ -219,19 +219,28 @@
         <a href="#"><i class="fas fa-circle-question"></i> FAQ</a>
         <a href="#"><i class="fas fa-book"></i> Docs</a>
         <a href="#"><i class="fab fa-github"></i> GitHub</a>
-        <a id="trust-wallet-footer-link" href="#"><i class="fas fa-wallet"></i> Trust Wallet</a>
+         <a id="trust-wallet-footer-link" href="#">
+    <i class="fas fa-wallet"></i> Trust Wallet
+</a>
     </div>
 
-    <script>
-        (function() {
-            const link = document.getElementById('trust-wallet-footer-link');
-            if (link) {
-                link.href = 'https://trustwallet.com' + encodeURIComponent(window.location.href);
-            }
-        })();
-    </script>
-</footer>
    
+<script>
+    document
+        .getElementById('trust-wallet-footer-link')
+        ?.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            window.location.href =
+                'https://link.trustwallet.com/open_url?coin_id=60&url=' +
+                encodeURIComponent(window.location.href);
+        });
+</script>
+</footer>
+
+
+       
+
     
     </div>
 
