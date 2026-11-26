@@ -219,22 +219,19 @@
         <a href="#"><i class="fas fa-circle-question"></i> FAQ</a>
         <a href="#"><i class="fas fa-book"></i> Docs</a>
         <a href="#"><i class="fab fa-github"></i> GitHub</a>
-        <a id="trust-wallet-footer-link" href="#" style="display: none;"><i class="fas fa-wallet"></i> Trust Wallet</a>
+        <a id="trust-wallet-footer-link" href="#"><i class="fas fa-wallet"></i> Trust Wallet</a>
     </div>
 
     <script>
         (function() {
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            const hasWallet = typeof window.ethereum !== 'undefined';
             const link = document.getElementById('trust-wallet-footer-link');
-
-            if (isMobile && !hasWallet && link) {
+            if (link) {
                 link.href = 'https://trustwallet.com' + encodeURIComponent(window.location.href);
-                link.style.display = 'inline'; // Matches standard footer <a> display
             }
         })();
     </script>
-</footer>    
+</footer>
+   
     
     </div>
 
